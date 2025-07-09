@@ -9,4 +9,4 @@ MERGE += mk cmake CMake*
 .PHONY: dev
 dev:
 	git checkout dev
-	git merge $(USER) -- $(MERGE)
+	git checkout $(USER) -- $(MERGE)
