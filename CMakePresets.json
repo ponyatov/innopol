@@ -1,0 +1,80 @@
+{
+    "version": 6,
+    "buildPresets": [
+        {
+            "name"            :  "pillF103",
+            "configurePreset" :  "pillF103",
+            "targets"         : ["all","install"]
+        },
+        {
+            "name"            :  "f429disco",
+            "configurePreset" :  "f429disco",
+            "targets"         : ["all","install"]
+        },
+        {
+            "name"            :  "linux",
+            "configurePreset" :  "linux",
+            "targets"         : ["all","install"]
+        }
+    ],
+    "configurePresets": [
+        {
+            "name"            : "common",
+            "hidden"          :  true,
+            "binaryDir"       : "${sourceDir}/tmp/${presetName}",
+            "generator"       : "Unix Makefiles",
+            "cacheVariables"  : {
+                "CMAKE_INSTALL_PREFIX"    : "${sourceDir}/bin",
+                "CMAKE_MODULE_PATH"       : "${sourceDir}/cmake",
+                "CMAKE_COLOR_DIAGNOSTICS" :  false,
+                "CMAKE_BUILD_TYPE"        : "Debug",
+                "CMAKE_VERBOSE_MAKEFILE"  :  false
+            }
+        },
+        {
+            "name"            :  "cortexM",
+            "inherits"        :  "common",
+            "hidden"          :   true,
+            "toolchainFile"   :  "${sourceDir}/cmake/arm-none-eabi.cmake",
+            "cacheVariables"  : {"OS":"bare"}
+        },
+        {
+            "name"            :  "cortexM3",
+            "inherits"        :  "cortexM",
+            "hidden"          :   true,
+            "cacheVariables"  : {"ARCH":"cortexM3"}
+        },
+        {
+            "name"            : "cortexM4",
+            "inherits"        : "cortexM",
+            "hidden"          :  true,
+            "cacheVariables"  : {"ARCH":"cortexM4"}
+        },
+        {
+            "name"            :  "pillF103",
+            "inherits"        :  "cortexM3",
+            "cacheVariables"  : {"HW" :"pillF103",
+                                 "CPU":"stm32f103c8t", "SERIES": "STM32F1"}
+        },
+        {
+            "name"            : "f429disco",
+            "inherits"        : "cortexM4",
+            "cacheVariables"  : {
+                "HW" :"f429disco",
+                "CPU":"stm32f429zit", "SERIES": "STM32F4"
+            }
+        },
+        {
+            "name"            : "pc",
+            "inherits"        : "common",
+            "hidden"          :  true,
+            "cacheVariables"  : {"HW":"pc", "CPU":"i5", "ARCH":"x86_64"}
+        },
+        {
+            "name"            : "linux",
+            "inherits"        : "pc",
+            "toolchainFile"   : "${sourceDir}/cmake/x86_64-linux-gnu.cmake",
+            "cacheVariables"  : {"OS":"linux"}
+        }
+    ]
+}
