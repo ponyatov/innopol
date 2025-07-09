@@ -1,5 +1,5 @@
 %{
-    #include "INNOPOL.hpp"
+    #include "innopol.hpp"
 %}
 
 %defines %union {}

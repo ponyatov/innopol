@@ -1,5 +1,5 @@
 # ![](doc/logo.png) `INNOPOL` 0.0.1
-## Тестовое задание
+## тестовое задание
 
 (c) Dmitry Ponyatov <dponyatov@gmail.com> 2025 MIT
 

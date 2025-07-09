@@ -1,7 +1,7 @@
 {
     "name"        : "innopol",
     "version"     : "0.0.1",
-    "description" : "Тестовое задание",
+    "description" : "тестовое задание",
     "main"        : "src/innopol.ts",
     "directories" : { "doc": "doc", "src": "src" },
     "scripts": {

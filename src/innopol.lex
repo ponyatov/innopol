@@ -1,6 +1,6 @@
 %{
-    #include "INNOPOL.hpp"
-    #include "INNOPOL.yacc.hpp"
+    #include "innopol.hpp"
+    #include "innopol.yacc.hpp"
     char *yyfile = nullptr;
 %}
 

@@ -2,7 +2,7 @@
 
 // project metainfo
 let APP   = "INNOPOL"
-let TITLE = "Тестовое задание"
+let TITLE = "тестовое задание"
 
 let ABOUT = "
 - https://docs.google.com/document/d/1bDOQJE12SUPdtYaxQcywIpZ4JsIu-VC5/edit?tab=t.0

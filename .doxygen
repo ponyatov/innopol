@@ -1,5 +1,5 @@
 PROJECT_NAME           = "INNOPOL"
-PROJECT_BRIEF          = "Тестовое задание"
+PROJECT_BRIEF          = "тестовое задание"
 PROJECT_LOGO           = doc/logo.png
 OUTPUT_DIRECTORY       = doc
 HTML_OUTPUT            = html
