@@ -23,8 +23,16 @@ H += $(wildcard arch/inc/*.h*) $(wildcard arch/*/inc/*.h*)
 C += $(wildcard   os/src/*.c*) $(wildcard   os/*/src/*.c*)
 H += $(wildcard   os/inc/*.h*) $(wildcard   os/*/inc/*.h*)
 
+# libs
+C += $(wildcard lib/src/*.c*) $(wildcard lib/*/src/*.c*)
+H += $(wildcard lib/inc/*.h*) $(wildcard lib/*/inc/*.h*)
+
 # ini
 S += $(wildcard lib/*.ini) $(wildcard lib/*.f)
+
+# JavaScript
+T += $(wildcard src/*.ts)
+J += $(wildcard src/*.js)
 
 # Python
 P += $(wildcard src/*.py)
