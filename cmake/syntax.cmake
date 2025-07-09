@@ -2,8 +2,8 @@
 
 find_package(FLEX     REQUIRED)
 find_package(BISON    REQUIRED)
-find_package(Readline REQUIRED)
-# find_package(RAGEL    REQUIRED)
+# find_package(Readline REQUIRED)
+find_package(RAGEL    REQUIRED)
 # find_package(LEMON    REQUIRED)
 
 file(GLOB L

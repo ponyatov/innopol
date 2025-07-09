@@ -111,15 +111,15 @@ PROJECT_LOGO           = doc/logo.png
 
 let lib:unit = //
     mkdir "lib"
-    File.WriteAllText($"lib/{APP}.ini", "# line comment\n")
+    File.WriteAllText($"lib/{app}.ini", "# line comment\n")
 
 let cpp: unit = //
     mkdir "inc"
-    touch $"inc/{APP}.hpp"
+    touch $"inc/{app}.hpp"
     mkdir "src"
-    touch $"src/{APP}.cpp"
-    touch $"src/{APP}.lex"
-    touch $"src/{APP}.yacc"
+    touch $"src/{app}.cpp"
+    touch $"src/{app}.lex"
+    touch $"src/{app}.yacc"
 
 let rust: unit = //
     mkdir ".cargo"
@@ -376,12 +376,12 @@ let files :unit = //
     fs
 
 let package:unit = //
-    touch $"src/{APP}.ts"
+    touch $"src/{app}.ts"
     File.WriteAllText ("package.json",$"{{
     \"name\"        : \"{app}\",
     \"version\"     : \"{VERSION}\",
     \"description\" : \"{TITLE}\",
-    \"main\"        : \"src/{APP}.ts\",
+    \"main\"        : \"src/{app}.ts\",
     \"directories\" : {{ \"doc\": \"doc\", \"src\": \"src\" }},
     \"scripts\": {{
         \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"
