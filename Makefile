@@ -12,4 +12,5 @@ include mk/rust.mk
 include mk/python.mk
 include mk/gz.mk
 include mk/install.mk
+include mk/merge.mk
 include mk/ai.mk

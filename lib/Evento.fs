@@ -247,7 +247,7 @@ let dirs:unit = //
 
 let mk: unit = //
     mkdir "mk"
-    let makes = ["var";"version";"dir";"cross";"tool";"src";"all";"format";"rule";"doc";"rust";"python";"gz";"install";"ai"]
+    let makes = ["var";"version";"dir";"cross";"tool";"src";"all";"format";"rule";"doc";"rust";"python";"gz";"install";"merge";"ai"]
     for m in makes do
         touch $"mk/{m}.mk"
     File.WriteAllText("Makefile",
