@@ -1,2 +1,2 @@
-/// #defgroup freertos freertos
+/// @defgroup freertos freertos
 /// @ingroup os

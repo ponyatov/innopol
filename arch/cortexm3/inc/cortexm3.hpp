@@ -1,2 +1,2 @@
-/// #defgroup cortexm3 cortexm3
+/// @defgroup cortexm3 cortexm3
 /// @ingroup arch

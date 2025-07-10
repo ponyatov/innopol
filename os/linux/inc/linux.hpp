@@ -1,2 +1,2 @@
-/// #defgroup linux linux
+/// @defgroup linux linux
 /// @ingroup os

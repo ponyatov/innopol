@@ -160,7 +160,11 @@ let cross_ name = //
     mkdir $"{name}"
     mkdir $"{name}/inc"
     mkdir $"{name}/src"
-    File.WriteAllText ($"{name}/inc/{name}.hpp",$"/// @defgroup {name} {name}\n/// @ingroup cross\n")
+    let hd = 
+        match name with
+        | s when s="hw" -> "/// @defgroup cross cross\n"
+        | _ -> ""
+    File.WriteAllText ($"{name}/inc/{name}.hpp",$"{hd}/// @defgroup {name} {name}\n/// @ingroup cross\n")
     File.WriteAllText ($"{name}/src/{name}.cpp",$"#include \"{name}.hpp\"\n")
 
 let hw:unit = //
@@ -175,8 +179,8 @@ let hw:unit = //
             touch $"hw/{hw}/{hw}.cmake"
             mkdir $"hw/{hw}/inc"
             mkdir $"hw/{hw}/src"
-            touch $"hw/{hw}/inc/{hw}.hpp"
             touch $"hw/{hw}/src/{hw}.cpp"
+            File.WriteAllText ($"hw/{hw}/inc/{hw}.hpp",$"/// @defgroup {hw} {hw}\n/// @ingroup hw\n")
 
 let cpu:unit = //
     cross_ "cpu"
@@ -190,7 +194,7 @@ let cpu:unit = //
             touch $"cpu/{cpu}/{cpu}.cmake"
             mkdir $"cpu/{cpu}/inc"
             mkdir $"cpu/{cpu}/src"
-            File.WriteAllText ( $"cpu/{cpu}/inc/{cpu}.hpp",$"/// #defgroup {cpu} {cpu}\n/// @ingroup cpu\n")
+            File.WriteAllText ( $"cpu/{cpu}/inc/{cpu}.hpp",$"/// @defgroup {cpu} {cpu}\n/// @ingroup cpu\n")
             File.WriteAllText ( $"cpu/{cpu}/src/{cpu}.cpp",$"#include \"{cpu}.hpp\"\n")
 
 let arch:unit = //
@@ -198,14 +202,14 @@ let arch:unit = //
 
     for arch in [
         "x86_64";
-        "cortexm"; "cortexm3"; "cortexm4"; "xtensa";
+        "cortexm"; "cortexm3"; "cortexm4";
         ] do
             mkdir $"arch/{arch}"
             touch $"arch/{arch}/{arch}.mk"
             touch $"arch/{arch}/{arch}.cmake"
             mkdir $"arch/{arch}/inc"
             mkdir $"arch/{arch}/src"
-            File.WriteAllText ( $"arch/{arch}/inc/{arch}.hpp",$"/// #defgroup {arch} {arch}\n/// @ingroup arch\n")
+            File.WriteAllText ( $"arch/{arch}/inc/{arch}.hpp",$"/// @defgroup {arch} {arch}\n/// @ingroup arch\n")
             File.WriteAllText ( $"arch/{arch}/src/{arch}.cpp",$"#include \"{arch}.hpp\"\n")
 
 let os:unit = //
@@ -216,7 +220,7 @@ let os:unit = //
     ] do
         mkdir $"os/{os}" ; touch $"os/{os}/{os}.mk" ; touch $"os/{os}/{os}.cmake"
         mkdir $"os/{os}/inc" ; mkdir $"os/{os}/src"
-        File.WriteAllText ( $"os/{os}/inc/{os}.hpp",$"/// #defgroup {os} {os}\n/// @ingroup os\n")
+        File.WriteAllText ( $"os/{os}/inc/{os}.hpp",$"/// @defgroup {os} {os}\n/// @ingroup os\n")
         File.WriteAllText ( $"os/{os}/src/{os}.cpp",$"#include \"{os}.hpp\"\n")
 
 let cross:unit = //
